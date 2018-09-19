@@ -1,0 +1,107 @@
+body {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+.calendar-container {
+  width: 600px;
+}
+
+.calendar {
+  border-bottom: 1px solid rgba(0, 0, 0, .5);
+  border-right: 1px solid rgba(0, 0, 0, .5);
+  width: 100%;
+}
+
+.day {
+  border-top: 1px solid rgba(0, 0, 0, .5);
+  border-left: 1px solid rgba(0, 0, 0, .5);
+
+  padding: 15px;
+
+  text-align: center;
+}
+
+.day.adj-month {
+  background-color: rgba(0, 0, 0, .1);
+  opacity: .5;
+}
+
+.calendar-item {
+  display: block;
+  height: 5px;
+
+}
+
+.calendar-control {
+  background-color: rgb(225, 225, 225);
+  border: 1px solid rgba(170, 170, 170, .7);
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 12px;
+}
+
+.calendar-control[data-calendar-control="prev"] {
+  float: left;
+}
+
+.calendar-control[data-calendar-control="next"] {
+  float: right;
+}
+
+.title {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#image-results {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
